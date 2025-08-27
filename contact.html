@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div style="float: left; width:20%">
+        <h3 class="name">Cinnamon's Buns</h3>
+        </div>
+    
+
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <br>
+
+        <header>
+            <i class="ri-shopping-basket-line"></i>
+            <span class="cart-item-count"></span>
+        </header>
+    
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <div class="cart-content">
+                <div class="cart-box">
+                    <img src="Images/cinnamonroll1.jpg" class="cart-img">
+                    <div class="cart-detail">
+                        <h2 class="cart-product-title">Classic Roll</h2>
+                        <span class="cart-price">R30</span>
+                        <div class="cart-quantity">
+                            <button id="decrement">-</button>
+                            <span class="number">1</span>
+                            <button id="increment">+</button>
+                        </div>
+                    </div>
+                    <i class="ri-delete-bin-5-line cart-remove"></i>
+                </div>
+            </div>
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">R0</div>
+        </div>
+        <buttom class="btn-buy">Place Order</buttom>
+        <i class="ri-close-line" id="cart-close"></i>
+    </div>
+
+
+        <div class="contact-list">
+            <h1>Contact us</h1>
+            
+            <form method="post" action="index.html">
+                <label for="name">First Name: </label>
+                <input type="text" id="name" placeholder="e.g Madluphutu" required><br><br>
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" placeholder="e.g MadPap@email.com" required><br><br>
+
+                <label for="cell">Phone Number: </label>
+                <input type="tel" id="cell" placeholder="e.g 0718008135" max length="10" required><br><br>
+                
+                <label for="text">Message: </label>
+                <textarea type="text" id="message" placeholder="Type your message here..." rows="4" required></textarea> <br><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+    </div>
+    <br><br>
+
+    <h2>Trading hours</h2>
+    <p>Mon - Thurs <br>
+       08:00 - 17:00
+    </p>
+    <p>Weekends & Public Holidays <br>
+       08:00 - 14:00
+    </p>
+    <p>Christmas Day <br>
+        Closed
+     </p>
+
+    <h2>Find us here</h2>
+    <p>Telephone: 0718008132</p>
+    <p>WhatsApp: 0718008132</p>
+    <p>Email: order@cinnamonsbuns.co.za</p>
+    <br>
+    <h3>Meet us in Person</h3>
+    <br>
+    <iframe src="https://maps.app.goo.gl/8jY73SbDDAL665JG8" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+</body>
+</html>
