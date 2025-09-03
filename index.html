@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 
 
 <body>
-<!-- Website logo-->
-    <div style="float: left; width:20%">
-        <img src="Images/Logo.png" alt="200">
+
+<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
+    <header class="mainheader">
+        <div class="logo">
+            <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
         </div>
-    
-<!--Navigation bar which is constant around the website--->
-        <nav>
-            <a href="index.html">Homepage</a>
+        <!--Nvaigation bar-->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="gallery.html">Gallery</a>
             <a href="shop.html">Shop</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <br>
-
-<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
-    <header>
-        <i class="ri-shopping-basket-line"></i>
-        <span class="cart-item-count"></span>
+        <!--Shoppig cart-->
+        <div class="cart-container">
+            <div id="cart-icon">
+                <i class="ri-shopping-basket-line"></i>
+                <span class="cart-item-count"></span>
+            </div>    
+        </div>
     </header>
+
 
     <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
@@ -55,22 +58,53 @@
     <buttom class="btn-buy">Place Order</buttom>
     <i class="ri-close-line" id="cart-close"></i>
 </div>
-<!--Banner-->
-<h1>Welcome Home</h1>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Freshly Baked Cinnamon Swirls</h1>
+    <p>Handcrafted with love every morning. Our artisan cinnamon buns are made with the finest ingredients and our secret family recipe passed down through generations.</p>
+    <a href="shop.html" class="btn">View Our Menu</a>
+</section>
+
 <br>
+
 <!--Introduction of the business... their story-->
+<section class="story">
 <h2>Our Story</h2>
 <p>Here at Cinnamon’s Buns our mission is to create baked goods<br>
    that not only satisfy your sweet tooth but also warm your heart.<br>
    With the use of quality ingredients, thoughtful expressions, and<br>
    a little elbow grease, and our 60-year-old Cinnamons Family Recipe,<br>
    we hope that we can bring people together one treat at a time.</p>
+
+   <div class="story-content">
+    <div class="story-card">
+        <h3>70+</h3>
+        <p>Years of Excellence</p>
+    </div>
+    <div class="story-card">
+        <h3>1000+</h3>
+        <p>Daily Fresh Buns</p>
+    </div>
+    <div class="story-card">
+        <h3>100%</h3>
+        <p>Natural Ingredients</p>
+    </div>
+    <div class="story-card">
+        <h3>24/7</h3>
+        <p>Fresh Baking</p>
+    </div>
+</div>
 <a href="about.html"><button type="button">About Us</button></a>
+</section>
 <br>
+
+
 <!--Best sellers section with quick buy section that takes products to shopping cart-->
 <!--Section tags used to create a section in the page-->
-<section class=shop>
-    <h2 class="section-title">Best Sellers</h2>
+<div class="container">
+<section class="shop">
+    <h1 class="section-title">Best Sellers</h1>
     <div class="product-content">
         <div class="product-box">
             <div class="img-box">
@@ -87,7 +121,7 @@
             <div class="img-box">
                 <img src="Images/cinnamonroll4.jpg" alt="Cinnamon Roll 4" width="200">
             </div>
-            <h3 class="product-title">Biscoff Roll</h3>
+            <h2 class="product-title">Biscoff Roll</h2>
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <i class="ri-shopping-basket-line add-cart"></i>
@@ -98,7 +132,7 @@
             <div class="img-box">
                 <img src="Images/cinnamonroll5.jpg" alt="Cinnamon Roll 5" width="200">
             </div>
-            <h3 class="product-title">Red Roll</h3>
+            <h2 class="product-title">Red Roll</h2>
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <i class="ri-shopping-basket-line add-cart"></i>
@@ -109,7 +143,7 @@
             <div class="img-box">
                 <img src="Images/chocchipcookie.jpg" alt="Chocolate Chip Cookie" width="200">
             </div>
-            <h3 class="product-title">Chocolate Chip Cookie</h3>
+            <h2 class="product-title">Chocolate Chip Cookie</h2>
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <i class="ri-shopping-basket-line add-cart"></i>
@@ -120,7 +154,7 @@
             <div class="img-box">
                 <img src="Images/vanillacookie.jpg" alt="Vanilla Cookie" width="200">
             </div>
-            <h3 class="product-title">Vanilla Cookie</h3>
+            <h2 class="product-title">Vanilla Cookie</h2>
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <i class="ri-shopping-basket-line add-cart"></i>
@@ -131,7 +165,7 @@
             <div class="img-box">
                 <img src="Images/carrotcake1.jpg" alt="Carrot Cake 1" width="200">
             </div>
-            <h3 class="product-title">Carrot Cake</h3>
+            <h2 class="product-title">Carrot Cake</h2>
             <div class="price-and-cart">
                 <span class="price">R50</span>
                 <i class="ri-shopping-basket-line add-cart"></i>
@@ -139,9 +173,12 @@
         </div>
     </div>
 </section><br>
+</div>
 
-<!--Quick button to shopping page-->
-<a href="shop.html"><button type="button">Shop</button></a>
+<!-- Quick button to shopping page -->
+<div style="text-align: center; margin: 30px 0;">
+    <a href="shop.html"><button type="button">Shop All Products</button></a>
+</div>
 <br>
 <!--Enquiry form-->
 <h1>Get in touch</h1>
