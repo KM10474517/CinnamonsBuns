@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Gallery</title>
-    <link rel="stylesheet" href="style.css">
-    <link  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-<!-- Website logo-->
-    <div style="float: left; width:20%">
-        <img src="Images/Logo.png" alt="200">
-    </div>
-    
-<!--Navigation bar which is constant around the website--->
-        <nav>
-            <a href="index.html">Homepage</a>
+
+    <!--Header containing Logo, Navigation Bar, and Sopping Cart-->
+    <!--Logo-->
+    <header class="mainheader">
+        <div class="logo">
+            <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
+        </div>
+        <!--Nvaigation bar-->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="gallery.html">Gallery</a>
             <a href="shop.html">Shop</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <br>
-
-<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
-    <header>
-        <i class="ri-shopping-basket-line"></i>
-        <span class="cart-item-count"></span>
+        <!--Shoppig cart-->
+        <div class="cart-container">
+            <div id="cart-icon">
+                <i class="ri-shopping-basket-line"></i>
+                <span class="cart-item-count"></span>
+            </div>
+        </div>
     </header>
-
+    <!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
     <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
         <div class="cart-content">
@@ -50,136 +54,309 @@
         <div class="total">
             <div class="total-title">Total</div>
             <div class="total-price">R0</div>
+        </div>
+        <buttom class="btn-buy">Place Order</buttom>
+        <i class="ri-close-line" id="cart-close"></i>
     </div>
-    <buttom class="btn-buy">Place Order</buttom>
-    <i class="ri-close-line" id="cart-close"></i>
-</div>    
-    
-<section class="in-store">
-    <h2>In-Store Finds</h2>
-    <div class="gallery">
-        <a target="_blank" href="Images/baguette.jpg">
-            <img src="Images/baguette.jpg" alt="Baguette" width="200">
-        </a>
-        <div class="description">Baguette</div>
-    </div>
+    <br>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/bananabread1.jpg">
-            <img src="Images/bananabread1.jpg" alt="Baguette" width="200">
-        </a>
-        <div class="description">Banana Bread</div>
-    </div>
+    <!--Gallery-->
+    <section class="in-store">
+        <h2>In-Store Finds</h2>
+        <div class="gallery">
+            <a target="_blank" href="Images/baguette.jpg">
+                <img src="Images/baguette.jpg" alt="Baguette">
+            </a>
+            <div class="description">Baguette</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/choccroissant.jpg">
-            <img src="Images/choccroissant.jpg" alt="Chocolate Croissant" width="200">
-        </a>
-        <div class="description">Croissant</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/bananabread1.jpg">
+                <img src="Images/bananabread1.jpg" alt="Banana Bread">
+            </a>
+            <div class="description">Banana Bread</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/creambagel.jpg">
-            <img src="Images/creambagel.jpg" alt="Cream Bagel" width="200">
-        </a>
-        <div class="description">Cream Bagel</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/choccroissant.jpg">
+                <img src="Images/choccroissant.jpg" alt="Chocolate Croissant">
+            </a>
+            <div class="description">Croissant</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/goldenloaf.jpg">
-            <img src="Images/goldenloaf.jpg" alt="Golden Loaf" width="200">
-        </a>
-        <div class="description">Golden Loaf</div>
-    </div>
-</section>
+        <div class="gallery">
+            <a target="_blank" href="Images/creambagel.jpg">
+                <img src="Images/creambagel.jpg" alt="Cream Bagel">
+            </a>
+            <div class="description">Cream Bagel</div>
+        </div>
 
-<section class="in-store">
-    <h2>Cakes</h2>
-    <div class="gallery">
-        <a target="_blank" href="Images/berrycheesecake.jpg">
-            <img src="Images/berrycheesecake.jpg" alt="Berry Cheesecake" width="200">
-        </a>
-        <div class="description">Berry Cheesecake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/goldenloaf.jpg">
+                <img src="Images/goldenloaf.jpg" alt="Golden Loaf">
+            </a>
+            <div class="description">Golden Loaf</div>
+        </div>
+    </section>
+    <br>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/blackforestcake.jpg">
-            <img src="Images/blackforestcake.jpg" alt="Black Forest Cake" width="200">
-        </a>
-        <div class="description">Black Forest Cake</div>
-    </div>
+    <section class="in-store">
+        <h2>Cakes</h2>
+        <div class="gallery">
+            <a target="_blank" href="Images/berrycheesecake.jpg">
+                <img src="Images/berrycheesecake.jpg" alt="Berry Cheesecake">
+            </a>
+            <div class="description">Berry Cheesecake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/carrotcake2.jpg">
-            <img src="Images/carrotcake2.jpg" alt="Carrot Cake" width="200">
-        </a>
-        <div class="description">Carrot Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/blackforestcake.jpg">
+                <img src="Images/blackforestcake.jpg" alt="Black Forest Cake">
+            </a>
+            <div class="description">Black Forest Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/cheesecake.jpg">
-            <img src="Images/cheesecake.jpg" alt="Cheesecake" width="200">
-        </a>
-        <div class="description">Cheesecake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/carrotcake2.jpg">
+                <img src="Images/carrotcake2.jpg" alt="Carrot Cake">
+            </a>
+            <div class="description">Carrot Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/chocberrycake.jpg">
-            <img src="Images/chocberrycake.jpg" alt="Chocolate Berry Cake" width="200">
-        </a>
-        <div class="description">Chocolate Berry Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/cheesecake.jpg">
+                <img src="Images/cheesecake.jpg" alt="Cheesecake">
+            </a>
+            <div class="description">Cheesecake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/chocdropcake.jpg">
-            <img src="Images/chocdropcake.jpg" alt="Chocolatedrop Cake" width="200">
-        </a>
-        <div class="description">Chocolatedrop Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/chocberrycake.jpg">
+                <img src="Images/chocberrycake.jpg" alt="Chocolate Berry Cake">
+            </a>
+            <div class="description">Chocolate Berry Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/cinnamoncheesecake.jpg">
-            <img src="Images/cinnamoncheesecake.jpg" alt="Cinnamon Cheesecake" width="200">
-        </a>
-        <div class="description">Cinnamon Cheesecake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/chocdropcake.jpg">
+                <img src="Images/chocdropcake.jpg" alt="Chocolatedrop Cake">
+            </a>
+            <div class="description">Chocolatedrop Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/cinnamonrollcake1.jpg">
-            <img src="Images/cinnamonrollcake1.jpg" alt="Cinnamon Roll Cake" width="200">
-        </a>
-        <div class="description">Cinnamon Roll Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamoncheesecake.jpg">
+                <img src="Images/cinnamoncheesecake.jpg" alt="Cinnamon Cheesecake">
+            </a>
+            <div class="description">Cinnamon Cheesecake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/lemoncake1.jpg">
-            <img src="Images/lemoncake1.jpg" alt="Lemon Cake" width="200">
-        </a>
-        <div class="description">Lemon Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonrollcake1.jpg">
+                <img src="Images/cinnamonrollcake1.jpg" alt="Cinnamon Roll Cake">
+            </a>
+            <div class="description">Cinnamon Roll Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/rainbowcake.jpg">
-            <img src="Images/rainbowcake.jpg" alt="Rainbow Cake" width="200">
-        </a>
-        <div class="description">Rainbow Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/lemoncake1.jpg">
+                <img src="Images/lemoncake1.jpg" alt="Lemon Cake">
+            </a>
+            <div class="description">Lemon Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/redoreocake.jpg">
-            <img src="Images/redoreocake.jpg" alt="Red Velvet Oreo Cake" width="200">
-        </a>
-        <div class="description">Red Velvet Oreo Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/rainbowcake.jpg">
+                <img src="Images/rainbowcake.jpg" alt="Rainbow Cake">
+            </a>
+            <div class="description">Rainbow Cake</div>
+        </div>
 
-    <div class="gallery">
-        <a target="_blank" href="Images/vanillaberrycake.jpg">
-            <img src="Images/vanillaberrycake.jpg" alt="Vanilla Berry Cake" width="200">
-        </a>
-        <div class="description">Vanilla Berry Cake</div>
-    </div>
+        <div class="gallery">
+            <a target="_blank" href="Images/redoreocake.jpg">
+                <img src="Images/redoreocake.jpg" alt="Red Velvet Oreo Cake">
+            </a>
+            <div class="description">Red Velvet Oreo Cake</div>
+        </div>
 
-</section>
+        <div class="gallery">
+            <a target="_blank" href="Images/vanillaberrycake.jpg">
+                <img src="Images/vanillaberrycake.jpg" alt="Vanilla Berry Cake">
+            </a>
+            <div class="description">Vanilla Berry Cake</div>
+        </div>
+    </section>
+    <br>
 
+    <section class="in-store">
+        <h2>Cupcakes & Muffins</h2>
+        <div class="gallery">
+            <a target="_blank" href="Images/caramelcupcake.jpg">
+                <img src="Images/caramelcupcake.jpg" alt="Caramel Cupcake">
+            </a>
+            <div class="description">Caramel Cupcake</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/choccupcake.jpg">
+                <img src="Images/choccupcake.jpg" alt="Chocolate Cupcake">
+            </a>
+            <div class="description">Chocolate Cupcake</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/redcupcake.jpg">
+                <img src="Images/redcupcake.jpg" alt="Red Velvet Cupcake">
+            </a>
+            <div class="description">Red Velvet Cupcake</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/vanillacupcake.jpg">
+                <img src="Images/vanillacupcake.jpg" alt="Vanilla Cupcake">
+            </a>
+            <div class="description">Vanilla Cupcake</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/blueberrymuffin.jpg">
+                <img src="Images/blueberrymuffin.jpg" alt="Blueberry Muffin">
+            </a>
+            <div class="description">Blueberry Muffin</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/crispytopmuffin.jpg">
+                <img src="Images/crispytopmuffin.jpg" alt="CrispyTop Muffin">
+            </a>
+            <div class="description">Crispy Top Muffin</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/vanillamuffin.jpg">
+                <img src="Images/vanillamuffin.jpg" alt="Vanilla Muffin">
+            </a>
+            <div class="description">Vanilla Muffin</div>
+        </div>
+    </section>
+
+    <section class="in-store">
+        <h2>Cookies & Donuts</h2>
+        <div class="gallery">
+            <a target="_blank" href="Images/chocchipcookie.jpg">
+                <img src="Images/chocchipcookie.jpg" alt="Chocolate Chip Cookie">
+            </a>
+            <div class="description">Chocolate Chip Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cookiemonstercookie.jpg">
+                <img src="Images/cookiemonstercookie.jpg" alt="Cookie Monster Cookie">
+            </a>
+            <div class="description">Cookie Monster Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/darkchoccookie.jpg">
+                <img src="Images/darkchoccookie.jpg" alt="Dark Chocolate Cookie">
+            </a>
+            <div class="description">Dark Chocolate Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/redcookie.jpg">
+                <img src="Images/redcookie.jpg" alt="Red Cookie">
+            </a>
+            <div class="description">Red Velvet Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/vanillacookie.jpg">
+                <img src="Images/vanillacookie.jpg" alt="Vanilla Cookie">
+            </a>
+            <div class="description">Vanilla Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/vanillacreamcookie.jpg">
+                <img src="Images/vanillacreamcookie.jpg" alt="Vanilla Cream Cookie">
+            </a>
+            <div class="description">Vanilla Cream Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/carameldonut.jpg">
+                <img src="Images/carameldonut.jpg" alt="Caramel Donut">
+            </a>
+            <div class="description">Caramel Donut</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/oreodonut.jpg">
+                <img src="Images/oreodonut.jpg" alt="Oreo Donut">
+            </a>
+            <div class="description">Oreo Donut</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/sugarglazeddonut.jpg">
+                <img src="Images/sugarglazeddonut.jpg" alt="Sugar Glazed Donut">
+            </a>
+            <div class="description">Sugar Glazed Donut</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/whitedonut.jpg">
+                <img src="Images/whitedonut.jpg" alt="White Donut">
+            </a>
+            <div class="description">White Donut</div>
+        </div>
+    </section>
+
+    <section class="in-store">
+        <h2>Cinnamon Rolls</h2>
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll1.jpg">
+                <img src="Images/cinnamonroll1.jpg" alt="Classic Roll">
+            </a>
+            <div class="description">Classic Roll</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll2.jpg">
+                <img src="Images/cinnamonroll2.jpg" alt="Plain Roll">
+            </a>
+            <div class="description">Plain Roll</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll3.jpg">
+                <img src="Images/cinnamonroll3.jpg" alt="Cinnamon Roll Cookie">
+            </a>
+            <div class="description">Cinnamon Cookie</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll4.jpg">
+                <img src="Images/cinnamonroll4.jpg" alt="Caramel Roll">
+            </a>
+            <div class="description">Caramel Roll</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll5.jpg">
+                <img src="Images/cinnamonroll5.jpg" alt="Red Roll">
+            </a>
+            <div class="description">Red Roll</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="Images/cinnamonroll6.jpg">
+                <img src="Images/cinnamonroll6.jpg" alt="Oreo Roll">
+            </a>
+            <div class="description">Oreo Roll</div>
+        </div>
+        </section>
 </body>
+
 </html>

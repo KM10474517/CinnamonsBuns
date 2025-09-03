@@ -83,7 +83,7 @@
   .cart {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 360px;
     height: 100%;
     background: white;
@@ -296,3 +296,23 @@ nav a:hover::after {
     width: 80%;
     left: 10%;
 }  
+
+/*GALLERY.HTML*/
+.gallery {
+  display: inline-block;
+  border: 1px solid hsl(0, 0%, 60%);
+  margin: 5px;
+  width: 200px;
+}
+.gallery .description {
+  padding: 10px;
+  text-align: center;
+}
+.gallery:hover {
+  border: 1px solid hsl(0, 0%, 20%);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}

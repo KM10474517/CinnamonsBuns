@@ -4,55 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 
 <body>
-    <!-- Website logo-->
-    <div style="float: left; width:20%">
-        <img src="Images/Logo.png" alt="200">
-        </div>
-    
-<!--Navigation bar which is constant around the website--->
-        <nav>
-            <a href="index.html">Homepage</a>
-            <a href="about.html">About Us</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="shop.html">Shop</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <br>
-<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
-        <header>
+<!--Header containing Logo, Navigation Bar, and Sopping Cart-->
+<!--Logo-->
+<header class="mainheader">
+    <div class="logo">
+        <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
+    </div>
+    <!--Nvaigation bar-->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <!--Shoppig cart-->
+    <div class="cart-container">
+        <div id="cart-icon">
             <i class="ri-shopping-basket-line"></i>
             <span class="cart-item-count"></span>
-        </header>
-    
-        <div class="cart">
-            <h2 class="cart-title">Your Cart</h2>
-            <div class="cart-content">
-                <div class="cart-box">
-                    <img src="Images/cinnamonroll1.jpg" class="cart-img">
-                    <div class="cart-detail">
-                        <h2 class="cart-product-title">Classic Roll</h2>
-                        <span class="cart-price">R30</span>
-                        <div class="cart-quantity">
-                            <button id="decrement">-</button>
-                            <span class="number">1</span>
-                            <button id="increment">+</button>
-                        </div>
-                    </div>
-                    <i class="ri-delete-bin-5-line cart-remove"></i>
+        </div>    
+    </div>
+</header>
+<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
+<div class="cart">
+    <h2 class="cart-title">Your Cart</h2>
+    <div class="cart-content">
+        <div class="cart-box">
+            <img src="Images/cinnamonroll1.jpg" class="cart-img">
+            <div class="cart-detail">
+                <h2 class="cart-product-title">Classic Roll</h2>
+                <span class="cart-price">R30</span>
+                <div class="cart-quantity">
+                    <button id="decrement">-</button>
+                    <span class="number">1</span>
+                    <button id="increment">+</button>
                 </div>
             </div>
-            <div class="total">
-                <div class="total-title">Total</div>
-                <div class="total-price">R0</div>
-        </div> 
-        <buttom class="btn-buy">Place Order</buttom>
-        <i class="ri-close-line" id="cart-close"></i>
+            <i class="ri-delete-bin-5-line cart-remove"></i>
+        </div>
     </div>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">R0</div>
+</div>
+<buttom class="btn-buy">Place Order</buttom>
+<i class="ri-close-line" id="cart-close"></i>
+</div>
+<br>
 
 <!--Enquiry form-->
         <div class="contact-list">
