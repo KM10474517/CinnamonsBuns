@@ -58,77 +58,105 @@
 </div>
 <br>
 
-        <h1>About Us</h1>
-        <br><br><br>
-
-
-        <div class="bakery-story">
-        <h2>Our Story</h2>
+<div class="about-us">
+    <!--Introduction Section-->
+    <div class="about-intro">
+        <h1>Cinnamon's Buns Bakery</h1>
+        <h2>About Us</h2>
         <p>
-            Cinnamon’s Buns began with a simple family recipe made by great-grandmother Cinnamon. <br>
-            What started as a weekend treat soon became a passion which was too good not to share. <br>
-            From those early mornings in the home kitchen to opening the doors of our bakery, <br>
-            our goal has always been to spread warmth and comfort and sweetness with every swirl.
+            Step into our cozy bakery, where the scent of freshly baked cinnamon rolls
+            and the sound of laughter fill the air. Cinnamon's Buns has been the heart
+            of the Rosebank Community for over 50 years, beloved by locals and visitors
+            alike. From our legendary buns to our delectable pastries, every bite is
+            crafted with care and infused with the warmth of family tradition. Experience
+            the comfort and joy that has made Cinnamon's Buns a cherished destination for
+            generations. We invite you to join us and become a part of our sweet story. 
         </p>
-        <img src="Images/Granny6.jpg" alt="Great-granny Cinnamon in her kitchen" width="200">
-        <h5>Great-granny Cinnamon with her<br>
-            daughter in their Home Kitchen.<br>
-        </h5>
     </div>
-        <br><br>
 
-        <div class="bakery-story">
-        <h2>The Mission</h2>
-        <p>
-            Here at Cinnamon’s Buns our mission is to create baked goods that not only satisfy <br>
-            your sweet tooth but also warm your heart. With the use of quality ingredients, <br>
-            thoughtful expressions, and a little elbow grease, and our 60-year-old Cinnamons Family Recipe, <br>
-            we hope that we can bring people together one treat at a time.
-        </p>
-        <img src="Images/Granny7.jpg" alt="Granny Cinnamon and her Siblings" width="200">
-        <h5>Great-granny Cinnamon with her sisters <br>
-            in 1969 on the opening day of their <br>
-            Cinnamon's Buns' bakery.
-        </h5>
+    <div class="bakery-story">
+        <div class="content">
+            <h2>Our Story</h2>
+            <p>
+                Cinnamon's Buns began with a simple family recipe made by great-grandmother Cinnamon. 
+                What started as a weekend treat soon became a passion which was too good not to share. 
+                From those early mornings in the home kitchen to opening the doors of our bakery, 
+                our goal has always been to spread warmth and comfort and sweetness with every swirl.
+            </p>
+        </div>
+        <div class="img-abt">
+            <img src="Images/Granny6.jpg" alt="Great-granny Cinnamon in her kitchen" width="280">
+            <h5>Great-granny Cinnamon with her daughter<br> in their Home Kitchen.</h5>
+        </div>
     </div>
-        <br><br>
 
-        <div>
-        <h2>We Cater to:</h2>
-        <ul>
-            <li>Families on a sweets adventure</li>
-            <li>Students and Young Dreamers</li>
-            <li>Busy Bees and Office Heroes</li>
-            <li>Celebrators of Fun Things</li>
-            <li>Champions who just want a treat</li>
-        </ul>
-        <img src="Images/SpecialEvent1.jpg" alt="Special Event Photo" width="200">
-        <h5>Coporate event catered be us
-        </h5>
+    <div class="bakery-mission">
+        <div class="content">
+            <h2>The Mission</h2>
+            <p>
+                Here at Cinnamon's Buns our mission is to create baked goods that not only satisfy 
+                your sweet tooth but also warm your heart. With the use of quality ingredients, 
+                thoughtful expressions, and a little elbow grease, and our 60-year-old Cinnamons Family Recipe, 
+                we hope that we can bring people together one treat at a time.
+            </p>
+        </div>
+        <div class="img-abt">
+            <img src="Images/Granny7.jpg" alt="Granny Cinnamon and her Siblings" width="280">
+            <h5>Great-granny Cinnamon with her sisters in<br> 1969 on the opening day of<br> Cinnamon's Buns' bakery.</h5>
+        </div>
     </div>
+
+    <div class="cater-to">
+        <div class="content">
+            <h2>We Cater to:</h2>
+            <ul>
+                <li>Families on a sweets adventure</li>
+                <li>Students and Young Dreamers</li>
+                <li>Busy Bees and Office Heroes</li>
+                <li>Celebrators of Fun Things</li>
+                <li>Champions who just want a treat</li>
+            </ul>
+            
+        </div>
+        <div class="img-abt">
+            <img src="Images/SpecialEvent1.jpg" alt="Special Event Photo" width="280">
+            <h5>Corporate event catered by us</h5>
+    </div>
+</div>
         <br><br>
-<!--Quick button to shopping page-->
-        <a href="shop.html"><button type="button">Shop</button></a>
-        <br>
-<!--Enquiry form-->
-        <h1>Get in touch</h1>
-        <br>
-        <form>
-            <label for="name">First Name: </label>
-            <input type="text" id="name" required><br><br>
+<!-- Quick button to shopping page -->
+<div class="shop-button" style="text-align: center; margin: 30px 0;">
+    <a href="shop.html" class="btn">Shop All Products</button></a>
+</div>
+<br>
         
-            <label for="email">Email: </label>
-            <input type="email" id="email" required><br><br>
-        
-            <label for="cell">Phone Number: </label>
-            <input type="tel" id="cell" required><br><br>
-        
-            <label for="text">Message: </label>
-            <textarea type="text" id="message" placeholder="Type your message here..." rows="4" required></textarea> <br><br>
-        
-            <button type="submit">Send </button>
-        
-        </form>        
+<!-- Enquiry Form -->
+<div class="form-container">
+    <h1>Get In Touch</h1>
+    <form id="enquiry-form">
+        <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cell">Phone Number</label>
+            <input type="tel" id="cell" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Type your message here..." rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>       
     
 </body>
 </html>

@@ -56,49 +56,56 @@
 <buttom class="btn-buy">Place Order</buttom>
 <i class="ri-close-line" id="cart-close"></i>
 </div>
-<br>
 
-<!--Enquiry form-->
-        <div class="contact-list">
-            <h1>Contact us</h1>
-            
-            <form method="post" action="index.html">
-                <label for="name">First Name: </label>
-                <input type="text" id="name" placeholder="e.g Madluphutu" required><br><br>
+<!--Enquiry Form-->
+<div class="form-container">
+    <h1>Get In Touch</h1>
+    <form id="enquiry-form">
+        <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" id="name" required>
+        </div>
 
-                <label for="email">Email: </label>
-                <input type="email" id="email" placeholder="e.g MadPap@email.com" required><br><br>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+        </div>
 
-                <label for="cell">Phone Number: </label>
-                <input type="tel" id="cell" placeholder="e.g 0718008135" max length="10" required><br><br>
-                
-                <label for="text">Message: </label>
-                <textarea type="text" id="message" placeholder="Type your message here..." rows="4" required></textarea> <br><br>
-                
-                <button type="submit">Submit</button>
-            </form>
+        <div class="form-group">
+            <label for="cell">Phone Number</label>
+            <input type="tel" id="cell" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Type your message here..." rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+    <!--Contact Info Section-->
+    <div class="contact-info">
+        <h2>Trading Hours</h2>
+        <div class="trading-hours">
+            <p>Mon - Thurs <br><strong>08:00 - 17:00</strong></p>
+            <p>Weekends & Public Holidays <br><strong>08:00 - 14:00</strong></p>
+            <p>Christmas Day <br><strong>Closed</strong></p>
+        </div>
+
+        <h2>Find us here</h2>
+        <div class="contact-details">
+            <p><strong>Telephone:</strong> 0718008132</p>
+            <p><strong>WhatsApp:</strong> 0718008132</p>
+            <p><strong>Email:</strong> order@cinnamonsbuns.co.za</p>
+        </div>
+
+        <h3>Meet us in Person</h3>
+        <div class="map-container">
+            <iframe src="https://maps.app.goo.gl/8jY73SbDDAL665JG8" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
-    <br><br>
-
-    <h2>Trading hours</h2>
-    <p>Mon - Thurs <br>
-       08:00 - 17:00
-    </p>
-    <p>Weekends & Public Holidays <br>
-       08:00 - 14:00
-    </p>
-    <p>Christmas Day <br>
-        Closed
-     </p>
-
-    <h2>Find us here</h2>
-    <p>Telephone: 0718008132</p>
-    <p>WhatsApp: 0718008132</p>
-    <p>Email: order@cinnamonsbuns.co.za</p>
-    <br>
-    <h3>Meet us in Person</h3>
-    <br>
-    <iframe src="https://maps.app.goo.gl/8jY73SbDDAL665JG8" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
+</div>   
 </body>
 </html>
