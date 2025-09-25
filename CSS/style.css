@@ -241,7 +241,7 @@
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-.product-box::before {
+.product-box.best-seller::before {
   content: 'BEST SELLER';
   position: absolute;
   top: 15px;
@@ -362,40 +362,42 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(92, 61, 46, 0.7), rgba(92, 61, 46, 0.7)), 
-  url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80');
+  background: linear-gradient(to left, rgba(92, 61, 46, 0.75), rgba(92, 61, 46, 0.4)),
+  url('../Images/cinnamonbasket2.png');
   background-size: cover;
-  background-position: center;
+  background-position: right center; /* keeps rolls visible */
   height: 80vh;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: flex-start; /* text on the left side */
+  text-align: left;
   color: white;
-  padding: 0 20px;
+  padding: 0 5%;
 }
 
 .hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 600px;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 56px;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .hero p {
   font-size: 20px;
   margin-bottom: 30px;
-  line-height: 1.8;
+  line-height: 1.7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .btn {
   display: inline-block;
   background-color: #d2691e;
   color: white;
-  padding: 12px 30px;
+  padding: 14px 32px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -408,6 +410,7 @@ nav a:hover::after {
   background-color: transparent;
   color: #d2691e;
 }
+
 
 /* Story Section */
 .story {
@@ -866,23 +869,75 @@ input:valid:focus, textarea:valid:focus {
   border: 2px solid #f5d6ab;
 }
 
-/*GALLERY.HTML*/
-.gallery {
-  display: inline-block;
-  border: 1px solid hsl(0, 0%, 60%);
-  margin: 5px;
-  width: 200px;
-}
-.gallery .description {
-  padding: 10px;
-  text-align: center;
-}
-.gallery:hover {
-  border: 1px solid hsl(0, 0%, 20%);
+/* General section styling */
+.in-store {
+  padding: 60px 20px;
+  background-color: #fdf6f0; /* warm cream background */
+  margin-bottom: 50px;
 }
 
+.in-store h2 {
+  font-size: 36px;
+  color: #5c3d2e;
+  margin-bottom: 40px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Grid for gallery items */
+.in-store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.in-store .gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Gallery item styling */
+.gallery {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.gallery:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Gallery images */
 .gallery img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
+
+/* Zoom on hover */
+.gallery:hover img {
+  transform: scale(1.08);
+}
+
+/* Description */
+.description {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5c3d2e;
+  background-color: #fff8f3;
+  border-top: 1px solid #eee;
+}
+
 
