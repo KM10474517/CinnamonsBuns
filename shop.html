@@ -9,13 +9,13 @@
 </head>
 
 <body>
-<!--Header containing Logo, Navigation Bar, and Sopping Cart-->
+<!--Header containing Logo, Navigation Bar, and Shopping Cart-->
 <!--Logo-->
 <header class="mainheader">
     <div class="logo">
         <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
     </div>
-    <!--Nvaigation bar-->
+    <!--Navigation bar-->
     <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -23,7 +23,7 @@
         <a href="shop.html">Shop</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <!--Shoppig cart-->
+    <!--Shopping cart-->
     <div class="cart-container">
         <div id="cart-icon">
             <i class="ri-shopping-basket-line"></i>
@@ -31,20 +31,25 @@
         </div>    
     </div>
 </header>
-<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
+
+<!--Shopping cart which will hang at the top corner of every page, will open up when clicked-->
 <div class="cart">
-    <h2 class="cart-title">Your Cart</h2>
+    <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <!-- Clear all button -->
+        <i class="ri-delete-bin-fill clear-all" title="Clear all items"></i>
+    </div>
     <div class="cart-content">
     </div>
     <div class="total">
         <div class="total-title">Total</div>
-        <div class="total-price">R0</div>
-</div>
-<button class="btn-buy">Place Order</button>
-<i class="ri-close-line" id="cart-close"></i>
+        <div class="total-price">R0.00</div>
+    </div>
+    <button class="btn-buy">Place Order</button>
+    <i class="ri-close-line" id="cart-close"></i>
 </div>
 
-<section class=shop>
+<section class="shop">
     <h2 class="section-title">Signature Swirls</h2>
     <div class="product-content">
         <div class="product-box best-seller">
@@ -55,7 +60,7 @@
             <div class="price-and-cart">
                 <span class="price">R30</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>   
@@ -68,7 +73,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -81,7 +86,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -94,7 +99,7 @@
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -107,7 +112,7 @@
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -120,14 +125,14 @@
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
     </div>
 </section>
 
-<section class=shop>
+<section class="shop">
     <h2 class="section-title">Sweet Classics</h2>
     <div class="product-content">
         <div class="product-box best-seller">
@@ -138,7 +143,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>   
@@ -151,7 +156,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -164,7 +169,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -177,7 +182,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -190,7 +195,7 @@
             <div class="price-and-cart">
                 <span class="price">R30</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -203,14 +208,14 @@
             <div class="price-and-cart">
                 <span class="price">R30</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
     </div>
 </section><br>
 
-<section class=shop>
+<section class="shop">
     <h2 class="section-title">Mini Treats</h2>
     <div class="product-content">
         <div class="product-box">
@@ -221,7 +226,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>   
@@ -234,7 +239,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -247,7 +252,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -260,7 +265,7 @@
             <div class="price-and-cart">
                 <span class="price">R40</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -273,7 +278,7 @@
             <div class="price-and-cart">
                 <span class="price">R20</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -286,14 +291,14 @@
             <div class="price-and-cart">
                 <span class="price">R30</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
     </div>
 </section><br>
 
-<section class=shop>
+<section class="shop">
     <h2 class="section-title">Special Bakes</h2>
     <div class="product-content">
         <div class="product-box">
@@ -304,7 +309,7 @@
             <div class="price-and-cart">
                 <span class="price">R280</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>   
@@ -317,7 +322,7 @@
             <div class="price-and-cart">
                 <span class="price">R280</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -330,7 +335,7 @@
             <div class="price-and-cart">
                 <span class="price">R200</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -343,7 +348,7 @@
             <div class="price-and-cart">
                 <span class="price">R350</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -356,7 +361,7 @@
             <div class="price-and-cart">
                 <span class="price">R350</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -369,7 +374,7 @@
             <div class="price-and-cart">
                 <span class="price">R250</span>
                 <button class="add-cart">
-                <i class="ri-shopping-basket-line add-cart"></i>
+                    <i class="ri-shopping-basket-line"></i>
                 </button>
             </div>
         </div>
@@ -403,6 +408,7 @@
         <button type="submit">Send Message</button>
     </form>
 </div>
-    <script src="JavaScript\script.js"></script>
+
+<script src="JavaScript/script.js"></script>
 </body>
 </html>

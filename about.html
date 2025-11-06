@@ -15,7 +15,7 @@
     <div class="logo">
         <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
     </div>
-    <!--Nvaigation bar-->
+    <!--Navigation bar-->
     <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -23,7 +23,7 @@
         <a href="shop.html">Shop</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <!--Shoppig cart-->
+    <!--Shopping cart-->
     <div class="cart-container">
         <div id="cart-icon">
             <i class="ri-shopping-basket-line"></i>
@@ -31,17 +31,22 @@
         </div>    
     </div>
 </header>
-<!--Shopping cart which will hand at the top corner of every page, will open up when clicked-->
+
+<!--Shopping cart which will hang at the top corner of every page, will open up when clicked-->
 <div class="cart">
-    <h2 class="cart-title">Your Cart</h2>
+    <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <!-- Clear all button -->
+        <i class="ri-delete-bin-fill clear-all" title="Clear all items"></i>
+    </div>
     <div class="cart-content">
     </div>
     <div class="total">
         <div class="total-title">Total</div>
-        <div class="total-price">R0</div>
+        <div class="total-price">R0.00</div>
     </div>
-<button class="btn-buy">Place Order</button>
-<i class="ri-close-line" id="cart-close"></i>
+    <button class="btn-buy">Place Order</button>
+    <i class="ri-close-line" id="cart-close"></i>
 </div>
 <br>
 
@@ -103,17 +108,18 @@
                 <li>Celebrators of Fun Things</li>
                 <li>Champions who just want a treat</li>
             </ul>
-            
         </div>
         <div class="img-abt">
             <img src="Images/SpecialEvent1.jpg" alt="Special Event Photo" width="280">
             <h5>Corporate event catered by us</h5>
+        </div>
     </div>
 </div>
-        <br><br>
+<br><br>
+
 <!-- Quick button to shopping page -->
 <div class="shop-button" style="text-align: center; margin: 30px 0;">
-    <a href="shop.html" class="btn">Shop All Products</button></a>
+    <a href="shop.html" class="btn">Shop All Products</a>
 </div>
 <br>
         
@@ -144,6 +150,7 @@
         <button type="submit">Send Message</button>
     </form>
 </div>       
-    <script src="JavaScript\script.js"></script>
+
+<script src="JavaScript/script.js"></script>
 </body>
 </html>
