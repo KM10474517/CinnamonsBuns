@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Cinnamon's Bakery - Freshly Baked Cinnamon Swirls & Artisan Pastries</title>
+    <meta name="description" content="Three generations of baking excellence. Freshly baked cinnamon swirls, artisan pastries, and desserts made with natural ingredients since 1952.">
+    <meta name="keywords" content="cinnamon rolls, bakery, fresh baked, artisan pastries, cinnamon buns, desserts, baked goods">
     <link rel="stylesheet" href="CSS/style.css">
-    <link  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
 
-<!--Header containing Logo, Navigation Bar, and Sopping Cart-->
-<!--Logo-->
+<!--Header containing Logo, Navigation Bar, and Shopping Cart-->
 <header class="mainheader">
     <div class="logo">
-        <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Logo">
+        <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Bakery Logo - Artisan Cinnamon Rolls">
     </div>
     <!--Navigation bar-->
     <nav class="navbar">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
         <a href="gallery.html">Gallery</a>
         <a href="shop.html">Shop</a>
@@ -71,9 +74,40 @@
             <div class="story-text">
                 <h2>Our Story</h2>
                 <p>Three generations of baking excellence, serving our community with warmth and tradition since 1952.</p>
-                <h3>Handcrafted Tradition</h3>
-                <p>Every morning at 4 AM, our master bakers begin the time-honored process of creating our signature cinnamon buns. Using only the finest organic flour, Madagascar vanilla, and Ceylon cinnamon, we ensure each swirl delivers the perfect balance of sweetness and spice.</p>
-                <p>Our grandmother's secret recipe has been carefully preserved and perfected over decades, creating the warm, fluffy texture and irresistible aroma that has made us a community favorite for generations.</p>
+                
+                <!-- Accordion for story details -->
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Handcrafted Tradition</h3>
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Every morning at 4 AM, our master bakers begin the time-honored process of creating our signature cinnamon buns. Using only the finest organic flour, Madagascar vanilla, and Ceylon cinnamon, we ensure each swirl delivers the perfect balance of sweetness and spice.</p>
+                            <p>Our grandmother's secret recipe has been carefully preserved and perfected over decades, creating the warm, fluffy texture and irresistible aroma that has made us a community favorite for generations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Our Ingredients</h3>
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>We source only the highest quality ingredients from trusted local suppliers and international sources for specialty items like our Ceylon cinnamon and Madagascar vanilla.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Community Commitment</h3>
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>As a family-owned business, we believe in giving back to the community that has supported us for generations. We regularly donate to local schools and participate in community events.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="story-content">
@@ -107,10 +141,19 @@
 <div class="container">
 <section class="shop">
     <h1 class="section-title">Best Sellers</h1>
-    <div class="product-content">
-        <div class="product-box best-seller">
+    
+    <!-- Basic search functionality only -->
+    <div class="search-filter">
+        <div class="search-box">
+            <input type="text" id="product-search" placeholder="Search products...">
+            <i class="ri-search-line"></i>
+        </div>
+    </div>
+    
+    <div class="product-content" id="product-container">
+        <div class="product-box best-seller" data-price="30" data-name="classic roll">
             <div class="img-box">
-                <img src="Images/cinnamonroll1.jpg" alt="Cinnamon Roll 1" width="200">
+                <img src="Images/cinnamonroll1.jpg" alt="Classic Cinnamon Roll with cream cheese frosting" width="200">
             </div>
             <h3 class="product-title">Classic Roll</h3>
             <div class="price-and-cart">
@@ -121,9 +164,9 @@
             </div>
         </div>   
         
-        <div class="product-box best-seller">
+        <div class="product-box best-seller" data-price="40" data-name="biscoff roll">
             <div class="img-box">
-                <img src="Images/cinnamonroll4.jpg" alt="Cinnamon Roll 4" width="200">
+                <img src="Images/cinnamonroll4.jpg" alt="Biscoff Cinnamon Roll with lotus spread" width="200">
             </div>
             <h2 class="product-title">Biscoff Roll</h2>
             <div class="price-and-cart">
@@ -134,9 +177,9 @@
             </div>
         </div>
 
-        <div class="product-box best-seller">
+        <div class="product-box best-seller" data-price="40" data-name="red roll">
             <div class="img-box">
-                <img src="Images/cinnamonroll5.jpg" alt="Cinnamon Roll 5" width="200">
+                <img src="Images/cinnamonroll5.jpg" alt="Red Velvet Cinnamon Roll with cream cheese" width="200">
             </div>
             <h2 class="product-title">Red Roll</h2>
             <div class="price-and-cart">
@@ -147,9 +190,9 @@
             </div>
         </div>
 
-        <div class="product-box best-seller">
+        <div class="product-box best-seller" data-price="20" data-name="chocolate chip cookie">
             <div class="img-box">
-                <img src="Images/chocchipcookie.jpg" alt="Chocolate Chip Cookie" width="200">
+                <img src="Images/chocchipcookie.jpg" alt="Chocolate Chip Cookie with melty chocolate chips" width="200">
             </div>
             <h2 class="product-title">Chocolate Chip Cookie</h2>
             <div class="price-and-cart">
@@ -160,9 +203,9 @@
             </div>
         </div>
 
-        <div class="product-box best-seller">
+        <div class="product-box best-seller" data-price="20" data-name="vanilla cookie">
             <div class="img-box">
-                <img src="Images/vanillacookie.jpg" alt="Vanilla Cookie" width="200">
+                <img src="Images/vanillacookie.jpg" alt="Vanilla Sugar Cookie with sprinkles" width="200">
             </div>
             <h2 class="product-title">Vanilla Cookie</h2>
             <div class="price-and-cart">
@@ -173,9 +216,9 @@
             </div>
         </div>
 
-        <div class="product-box best-seller">
+        <div class="product-box best-seller" data-price="50" data-name="carrot cake">
             <div class="img-box">
-                <img src="Images/carrotcake1.jpg" alt="Carrot Cake 1" width="200">
+                <img src="Images/carrotcake1.jpg" alt="Moist Carrot Cake with cream cheese frosting" width="200">
             </div>
             <h2 class="product-title">Carrot Cake</h2>
             <div class="price-and-cart">
@@ -186,6 +229,11 @@
             </div>
         </div>
     </div>
+    
+    <!-- No results message -->
+    <div id="no-results" class="no-results" style="display: none;">
+        <p>No products found matching your search criteria.</p>
+    </div>
 </section><br>
 </div>
 
@@ -193,6 +241,15 @@
 <div class="shop-button" style="text-align: center; margin: 30px 0;">
     <a href="shop.html" class="btn">Shop All Products</a>
 </div>
+<br>
+
+<!-- Interactive Map Section -->
+<section class="map-section">
+    <div class="container">
+        <h2 class="section-title">Visit Our Bakery</h2>
+        <div id="bakery-map"></div>
+    </div>
+</section>
 <br>
 
 <!-- Enquiry Form -->
@@ -223,6 +280,32 @@
     </form>
 </div>
 
+<!-- Loading animation for dynamic content -->
+<div id="loading" class="loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p>Loading...</p>
+</div>
+
+<!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Message Sent Successfully!</h2>
+            <i class="ri-close-line modal-close"></i>
+        </div>
+        <div class="modal-body">
+            <i class="ri-checkbox-circle-line success-icon"></i>
+            <p>Thank you for contacting Cinnamon's Buns! We've received your message and will get back to you within 2 hours.</p>
+            <p>For urgent matters, feel free to call us at <strong>071 800 8132</strong>.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary modal-close-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Leaflet JS for maps -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="JavaScript/script.js"></script>
 </body>
 </html>
