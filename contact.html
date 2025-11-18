@@ -1,653 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Cinnamon's Buns Bakery - Visit Us in Rosebank | Order Online</title>
-    <meta name="description" content="Contact Cinnamon's Buns Bakery in Rosebank. Visit our store, call 071 800 8132, or order online. Fresh cinnamon rolls daily.">
-    <meta name="keywords" content="contact cinnamon bakery, Rosebank bakery, order cinnamon rolls, bakery contact, visit our store">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <!-- Leaflet CSS for maps -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Cinnamon's Buns Bakery - Visit Us in Rosebank | Order Online</title>
+<meta name="description" content="Contact Cinnamon's Buns Bakery in Rosebank. Visit our store, call 071 800 8132, or order online. Fresh cinnamon rolls daily.">
+<meta name="keywords" content="contact cinnamon bakery, Rosebank bakery, order cinnamon rolls, bakery contact, visit our store">
+<link rel="stylesheet" href="CSS/style.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+<!-- Leaflet CSS for maps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
 <!--Header containing Logo, Navigation Bar, and Shopping Cart-->
 <header class="mainheader">
-    <div class="logo">
-        <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Bakery Logo - Contact Our Rosebank Store">
-    </div>
-    <!--Navigation bar-->
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="shop.html">Shop</a>
-        <a href="contact.html" class="active">Contact</a>
-    </nav>
-    <!--Shopping cart-->
-    <div class="cart-container">
-        <div id="cart-icon">
-            <i class="ri-shopping-basket-line"></i>
-            <span class="cart-item-count">0</span>
-        </div>    
-    </div>
+<div class="logo">
+    <img src="Images/Logo.jpg" width="200" alt="Cinnamon's Bakery Logo - Contact Our Rosebank Store">
+</div>
+<!--Navigation bar-->
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html" class="active">Contact</a>
+</nav>
+<!--Shopping cart-->
+<div class="cart-container">
+    <div id="cart-icon">
+        <i class="ri-shopping-basket-line"></i>
+        <span class="cart-item-count">0</span>
+    </div>    
+</div>
 </header>
 
 <!--Shopping cart which will hang at the top corner of every page, will open up when clicked-->
 <div class="cart">
-    <div class="cart-header">
-        <h2 class="cart-title">Your Cart</h2>
-        <!-- Clear all button -->
-        <i class="ri-delete-bin-fill clear-all" title="Clear all items"></i>
-    </div>
-    <div class="cart-content">
-    </div>
-    <div class="total">
-        <div class="total-title">Total</div>
-        <div class="total-price">R0.00</div>
-    </div>
-    <button class="btn-buy">Place Order</button>
-    <i class="ri-close-line" id="cart-close"></i>
+<div class="cart-header">
+    <h2 class="cart-title">Your Cart</h2>
+    <!-- Clear all button -->
+    <i class="ri-delete-bin-fill clear-all" title="Clear all items"></i>
+</div>
+<div class="cart-content">
+</div>
+<div class="total">
+    <div class="total-title">Total</div>
+    <div class="total-price">R0.00</div>
+</div>
+<button class="btn-buy">Place Order</button>
+<i class="ri-close-line" id="cart-close"></i>
 </div>
 
 <!-- Contact Page Hero -->
 <section class="contact-hero">
-    <div class="container">
-        <h1>Get In Touch With Cinnamon's Buns</h1>
-        <p>We'd love to hear from you! Whether you have questions, want to place an order, or just share your cinnamon roll experience.</p>
-    </div>
+<div class="container">
+    <h1>Get In Touch With Cinnamon's Buns</h1>
+    <p>We'd love to hear from you! Whether you have questions, want to place an order, or just share your cinnamon roll experience.</p>
+</div>
 </section>
 
 <!-- Contact Options Tabs -->
 <section class="contact-options">
-    <div class="container">
-        <div class="contact-tabs">
-            <button class="contact-tab active" data-tab="visit">Visit Us</button>
-            <button class="contact-tab" data-tab="call">Call Us</button>
-            <button class="contact-tab" data-tab="email">Email Us</button>
-            <button class="contact-tab" data-tab="catering">Catering</button>
+<div class="container">
+    <div class="contact-tabs">
+        <button class="contact-tab active" data-tab="visit">Visit Us</button>
+        <button class="contact-tab" data-tab="call">Call Us</button>
+        <button class="contact-tab" data-tab="email">Email Us</button>
+        <button class="contact-tab" data-tab="catering">Catering</button>
+    </div>
+    
+    <div class="contact-tab-content">
+        <!-- Visit Us Tab -->
+        <div class="contact-tab-pane active" id="visit">
+            <div class="tab-content-grid">
+                <div class="tab-info">
+                    <h2>Visit Our Bakery</h2>
+                    <p>Come experience the warm, inviting atmosphere of our bakery and enjoy our fresh-baked goods right from the oven.</p>
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <i class="ri-map-pin-line"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Bakery Street<br>Rosebank, Johannesburg 2196</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="ri-time-line"></i>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Thursday: 8:00 AM - 5:00 PM<br>
+                                    Friday: 8:00 AM - 6:00 PM<br>
+                                    Weekends: 8:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-map">
+                    <div id="interactive-map"></div>
+                </div>
+            </div>
         </div>
         
-        <div class="contact-tab-content">
-            <!-- Visit Us Tab -->
-            <div class="contact-tab-pane active" id="visit">
-                <div class="tab-content-grid">
-                    <div class="tab-info">
-                        <h2>Visit Our Bakery</h2>
-                        <p>Come experience the warm, inviting atmosphere of our bakery and enjoy our fresh-baked goods right from the oven.</p>
-                        <div class="location-details">
-                            <div class="detail-item">
-                                <i class="ri-map-pin-line"></i>
-                                <div>
-                                    <h4>Address</h4>
-                                    <p>123 Bakery Street<br>Rosebank, Johannesburg 2196</p>
-                                </div>
+        <!-- Call Us Tab -->
+        <div class="contact-tab-pane" id="call">
+            <div class="tab-content-grid">
+                <div class="tab-info">
+                    <h2>Call Our Bakery</h2>
+                    <p>Speak directly with our friendly staff to place orders or ask questions.</p>
+                    
+                    <div class="phone-options">
+                        <div class="phone-option">
+                            <div class="phone-icon">
+                                <i class="ri-phone-line"></i>
                             </div>
-                            <div class="detail-item">
-                                <i class="ri-time-line"></i>
-                                <div>
-                                    <h4>Opening Hours</h4>
-                                    <p>Monday - Thursday: 8:00 AM - 5:00 PM<br>
-                                       Friday: 8:00 AM - 6:00 PM<br>
-                                       Weekends: 8:00 AM - 2:00 PM</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="ri-car-line"></i>
-                                <div>
-                                    <h4>Parking</h4>
-                                    <p>Free parking available in our dedicated bakery lot</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-map">
-                        <div id="interactive-map"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Call Us Tab -->
-            <div class="contact-tab-pane" id="call">
-                <div class="tab-content-grid">
-                    <div class="tab-info">
-                        <h2>Call Our Bakery</h2>
-                        <p>Speak directly with our friendly staff to place orders or ask questions.</p>
-                        
-                        <div class="phone-options">
-                            <div class="phone-option">
-                                <div class="phone-icon">
-                                    <i class="ri-phone-line"></i>
-                                </div>
-                                <div class="phone-details">
-                                    <h4>Main Bakery Line</h4>
-                                    <a href="tel:+27718008132" class="phone-link">071 800 8132</a>
-                                    <p>For general enquiries and orders</p>
-                                </div>
-                            </div>
-                            
-                            <div class="phone-option">
-                                <div class="phone-icon">
-                                    <i class="ri-whatsapp-line"></i>
-                                </div>
-                                <div class="phone-details">
-                                    <h4>WhatsApp Orders</h4>
-                                    <a href="https://wa.me/27718008132" class="phone-link">071 800 8132</a>
-                                    <p>Quick orders and messages</p>
-                                </div>
-                            </div>
-                            
-                            <div class="phone-option">
-                                <div class="phone-icon">
-                                    <i class="ri-calendar-line"></i>
-                                </div>
-                                <div class="phone-details">
-                                    <h4>Catering Line</h4>
-                                    <a href="tel:+27718008132" class="phone-link">071 800 8132</a>
-                                    <p>For large orders and events</p>
-                                </div>
+                            <div class="phone-details">
+                                <h4>Main Bakery Line</h4>
+                                <a href="tel:+27718008132" class="phone-link">071 800 8132</a>
+                                <p>For general enquiries and orders</p>
                             </div>
                         </div>
                         
-                        <div class="call-tips">
-                            <h4>Best Times to Call</h4>
-                            <ul>
-                                <li>Morning orders: Call before 10 AM for same-day availability</li>
-                                <li>Catering enquiries: Call between 2 PM - 4 PM for detailed planning</li>
-                                <li>Weekend orders: Place by Friday 3 PM</li>
-                            </ul>
+                        <div class="phone-option">
+                            <div class="phone-icon">
+                                <i class="ri-whatsapp-line"></i>
+                            </div>
+                            <div class="phone-details">
+                                <h4>WhatsApp Orders</h4>
+                                <a href="https://wa.me/27718008132" class="phone-link">071 800 8132</a>
+                                <p>Quick orders and messages</p>
+                            </div>
                         </div>
+                        
+                        <div class="phone-option">
+                            <div class="phone-icon">
+                                <i class="ri-calendar-line"></i>
+                            </div>
+                            <div class="phone-details">
+                                <h4>Catering Line</h4>
+                                <a href="tel:+27718008132" class="phone-link">071 800 8132</a>
+                                <p>For large orders and events</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="call-tips">
+                        <h4>Best Times to Call</h4>
+                        <ul>
+                            <li>Morning orders: Call before 10 AM for same-day availability</li>
+                            <li>Catering enquiries: Call between 2 PM - 4 PM for detailed planning</li>
+                            <li>Weekend orders: Place by Friday 3 PM</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <!-- Email Us Tab -->
-            <div class="contact-tab-pane" id="email">
-                <div class="tab-content-grid">
-                    <div class="tab-info">
-                        <h2>Send Us an Email</h2>
-                        <p>Prefer to write? We'll respond to your email within 24 hours.</p>
-                        
-                        <div class="email-options">
-                            <div class="email-option">
-                                <h4>General Enquiries</h4>
-                                <a href="mailto:info@cinnamonsbuns.co.za" class="email-link">info@cinnamonsbuns.co.za</a>
-                                <p>For questions about our products and bakery</p>
-                            </div>
-                            
-                            <div class="email-option">
-                                <h4>Orders & Catering</h4>
-                                <a href="mailto:orders@cinnamonsbuns.co.za" class="email-link">orders@cinnamonsbuns.co.za</a>
-                                <p>To place orders or discuss catering needs</p>
-                            </div>
-                            
-                            <div class="email-option">
-                                <h4>Feedback & Reviews</h4>
-                                <a href="mailto:feedback@cinnamonsbuns.co.za" class="email-link">feedback@cinnamonsbuns.co.za</a>
-                                <p>We love hearing from our customers!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Catering Tab -->
-            <div class="contact-tab-pane" id="catering">
-                <div class="tab-content-grid">
-                    <div class="tab-info">
-                        <h2>Catering & Large Orders</h2>
-                        <p>Make your event special with our catering services. Perfect for offices, parties, and celebrations.</p>
-                        
-                        <div class="catering-features">
-                            <div class="catering-feature">
-                                <i class="ri-cake-3-line"></i>
-                                <h4>Office Breakfasts</h4>
-                                <p>Keep your team motivated with fresh morning treats</p>
-                            </div>
-                            <div class="catering-feature">
-                                <i class="ri-party-line"></i>
-                                <h4>Special Events</h4>
-                                <p>Birthdays, anniversaries, and celebrations</p>
-                            </div>
-                            <div class="catering-feature">
-                                <i class="ri-team-line"></i>
-                                <h4>Corporate Orders</h4>
-                                <p>Client meetings and corporate gifting</p>
-                            </div>
+        </div>
+        
+        <!-- Email Us Tab -->
+        <div class="contact-tab-pane" id="email">
+            <div class="tab-content-grid">
+                <div class="tab-info">
+                    <h2>Send Us an Email</h2>
+                    <p>Prefer to write? We'll respond to your email within 24 hours.</p>
+                    
+                    <div class="email-options">
+                        <div class="email-option">
+                            <h4>General Enquiries</h4>
+                            <a href="mailto:info@cinnamonsbuns.co.za" class="email-link">info@cinnamonsbuns.co.za</a>
+                            <p>For questions about our products and bakery</p>
                         </div>
                         
-                        <div class="catering-cta">
-                            <p><strong>Minimum order:</strong> 12+ items for catering</p>
-                            <p><strong>Lead time:</strong> 48 hours notice preferred</p>
-                            <button class="btn btn-catering" data-subject="Catering Enquiry">Request Catering Quote</button>
+                        <div class="email-option">
+                            <h4>Orders & Catering</h4>
+                            <a href="mailto:orders@cinnamonsbuns.co.za" class="email-link">orders@cinnamonsbuns.co.za</a>
+                            <p>To place orders or discuss catering needs</p>
+                        </div>
+                        
+                        <div class="email-option">
+                            <h4>Feedback & Reviews</h4>
+                            <a href="mailto:feedback@cinnamonsbuns.co.za" class="email-link">feedback@cinnamonsbuns.co.za</a>
+                            <p>We love hearing from our customers!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Catering Tab -->
+        <div class="contact-tab-pane" id="catering">
+            <div class="tab-content-grid">
+                <div class="tab-info">
+                    <h2>Catering & Large Orders</h2>
+                    <p>Make your event special with our catering services. Perfect for offices, parties, and celebrations.</p>
+                    
+                    <div class="catering-features">
+                        <div class="catering-feature">
+                            <i class="ri-cake-3-line"></i>
+                            <h4>Office Breakfasts</h4>
+                            <p>Keep your team motivated with fresh morning treats</p>
+                        </div>
+                        <div class="catering-feature">
+                            <i class="ri-party-line"></i>
+                            <h4>Special Events</h4>
+                            <p>Birthdays, anniversaries, and celebrations</p>
+                        </div>
+                        <div class="catering-feature">
+                            <i class="ri-team-line"></i>
+                            <h4>Corporate Orders</h4>
+                            <p>Client meetings and corporate gifting</p>
+                        </div>
+                    </div>
+                    
+                    <div class="catering-cta">
+                        <p><strong>Minimum order:</strong> 12+ items for catering</p>
+                        <p><strong>Lead time:</strong> 48 hours notice preferred</p>
+                        <button class="btn btn-catering" data-subject="Catering Enquiry">Request Catering Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </section>
 
-<!-- Enhanced Contact Form -->
+<!-- Contact Form Specific to Contact Page-->
 <section class="enhanced-form-section">
-    <div class="container">
-        <div class="form-grid">
-            <div class="form-info">
-                <h2>Send Us a Message</h2>
-                <p>Have a question or want to place an order? Fill in the form below and we'll get back to you soon!</p>
-                
-                <div class="form-features">
-                    <div class="form-feature">
-                        <i class="ri-time-line"></i>
-                        <span>Response within 2 hours</span>
-                    </div>
-                    <div class="form-feature">
-                        <i class="ri-customer-service-line"></i>
-                        <span>Friendly support</span>
-                    </div>
-                    <div class="form-feature">
-                        <i class="ri-cake-line"></i>
-                        <span>Expert baking advice</span>
-                    </div>
+<div class="container">
+    <div class="form-grid">
+        <div class="form-info">
+            <h2>Send Us a Message</h2>
+            <p>Have a question or want to place an order? Fill in the form below and we'll get back to you soon!</p>
+            
+            <div class="form-features">
+                <div class="form-feature">
+                    <i class="ri-time-line"></i>
+                    <span>Response within 2 hours</span>
                 </div>
-                
-                <div class="emergency-notice">
-                    <h4>Urgent Orders?</h4>
-                    <p>For same-day orders, please call us directly at <a href="tel:+27718008132">071 800 8132</a></p>
+                <div class="form-feature">
+                    <i class="ri-customer-service-line"></i>
+                    <span>Friendly support</span>
+                </div>
+                <div class="form-feature">
+                    <i class="ri-cake-line"></i>
+                    <span>Expert baking advice</span>
                 </div>
             </div>
             
-            <div class="form-container enhanced-form">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="fullname">Full Name *</label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-                        <div class="error-message" id="name-error"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        <div class="error-message" id="email-error"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cell">Phone Number *</label>
-                        <input type="tel" id="cell" name="cell" placeholder="e.g. 071 800 8132" required>
-                        <div class="error-message" id="cell-error"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="enquiry-type">Enquiry Type *</label>
-                        <select id="enquiry-type" name="enquiry-type" required>
-                            <option value="">Select an option</option>
-                            <option value="general">General Question</option>
-                            <option value="order">Place an Order</option>
-                            <option value="catering">Catering Enquiry</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="complaint">Complaint</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" placeholder="What's your enquiry about?" required>
-                        <div class="error-message" id="subject-error"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
-                        <div class="error-message" id="message-error"></div>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Subscribe to our newsletter for special offers and new flavors</label>
-                    </div>
-
-                    <button type="submit" class="btn-send" id="submit-btn">
-                        <span class="btn-text">Send Message</span>
-                        <div class="btn-loading" style="display: none;">
-                            <div class="loading-spinner"></div>
-                            <span>Sending...</span>
-                        </div>
-                    </button>
-                </form>
+            <div class="emergency-notice">
+                <h4>Urgent Orders?</h4>
+                <p>For same-day orders, please call us directly at <a href="tel:+27718008132">071 800 8132</a></p>
             </div>
         </div>
+        
+        <div class="form-container enhanced-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    <div class="error-message" id="name-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cell">Phone Number *</label>
+                    <input type="tel" id="cell" name="cell" placeholder="e.g. 071 800 8132" required>
+                    <div class="error-message" id="cell-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiry-type">Enquiry Type *</label>
+                    <select id="enquiry-type" name="enquiry-type" required>
+                        <option value="">Select an option</option>
+                        <option value="general">General Question</option>
+                        <option value="order">Place an Order</option>
+                        <option value="catering">Catering Enquiry</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's your enquiry about?" required>
+                    <div class="error-message" id="subject-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+                    <div class="error-message" id="message-error"></div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to our newsletter for special offers and new flavors</label>
+                </div>
+
+                <button type="submit" class="btn-send" id="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <div class="btn-loading" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <span>Sending...</span>
+                    </div>
+                </button>
+            </form>
+        </div>
     </div>
+</div>
 </section>
 
 <!-- FAQ Section -->
 <section class="faq-section">
-    <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="faq-accordion">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Do you deliver?</h3>
-                    <i class="ri-arrow-down-s-line"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes! We offer delivery within a 10km radius of our Rosebank bakery. Delivery fees start at R25. Same-day delivery available for orders placed before 2 PM.</p>
-                </div>
+<div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-accordion">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you deliver?</h3>
+                <i class="ri-arrow-down-s-line"></i>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What are your busiest times?</h3>
-                    <i class="ri-arrow-down-s-line"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Our peak hours are 7-9 AM for breakfast and 12-2 PM for lunch. For quicker service, visit between 9-11 AM or 2-4 PM.</p>
-                </div>
+            <div class="faq-answer">
+                <p>Yes! We offer delivery within a 10km radius of our Rosebank bakery. Delivery fees start at R25. Same-day delivery available for orders placed before 2 PM.</p>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Can I pre-order for a specific time?</h3>
-                    <i class="ri-arrow-down-s-line"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Absolutely! We recommend pre-ordering 24 hours in advance for specific pickup times, especially for large orders or weekends.</p>
-                </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What are your busiest times?</h3>
+                <i class="ri-arrow-down-s-line"></i>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Do you have gluten-free options?</h3>
-                    <i class="ri-arrow-down-s-line"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Currently, we don't offer gluten-free cinnamon rolls due to our traditional recipe, but we do have gluten-free cookie options. Please ask about our daily selections.</p>
-                </div>
+            <div class="faq-answer">
+                <p>Our peak hours are 7-9 AM for breakfast and 12-2 PM for lunch. For quicker service, visit between 9-11 AM or 2-4 PM.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Can I pre-order for a specific time?</h3>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! We recommend pre-ordering 24 hours in advance for specific pickup times, especially for large orders or weekends.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you have gluten-free options?</h3>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Currently, we don't offer gluten-free cinnamon rolls due to our traditional recipe, but we do have gluten-free cookie options. Please ask about our daily selections.</p>
             </div>
         </div>
     </div>
+</div>
 </section>
 
 <!-- Loading animation -->
 <div id="loading" class="loading" style="display: none;">
-    <div class="loading-spinner"></div>
-    <p>Loading...</p>
+<div class="loading-spinner"></div>
+<p>Loading...</p>
 </div>
 
 <!-- Success Modal -->
 <div id="success-modal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Message Sent Successfully!</h2>
-            <i class="ri-close-line modal-close"></i>
-        </div>
-        <div class="modal-body">
-            <i class="ri-checkbox-circle-line success-icon"></i>
-            <p>Thank you for contacting Cinnamon's Buns! We've received your message and will get back to you within 2 hours.</p>
-            <p>For urgent matters, feel free to call us at <strong>071 800 8132</strong>.</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary modal-close-btn">Close</button>
-        </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h2>Message Sent Successfully!</h2>
+        <i class="ri-close-line modal-close"></i>
     </div>
+    <div class="modal-body">
+        <i class="ri-checkbox-circle-line success-icon"></i>
+        <p>Thank you for contacting Cinnamon's Buns! We've received your message and will get back to you within 2 hours.</p>
+        <p>For urgent matters, feel free to call us at <strong>071 800 8132</strong>.</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary modal-close-btn">Close</button>
+    </div>
+</div>
 </div>
 
 <!-- Leaflet JS for maps -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="JavaScript/script.js"></script>
-<script>
-// Contact page specific JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize interactive map
-    initContactMap();
-    
-    // Initialize contact tabs
-    initContactTabs();
-    
-    // Initialize FAQ accordion
-    initFAQAccordion();
-    
-    // Enhanced form handling
-    initContactForm();
-    
-    // Initialize modal
-    initModal();
-});
-
-function initContactMap() {
-    const mapContainer = document.getElementById('interactive-map');
-    if (!mapContainer) return;
-    
-    // Initialize the map centered on Rosebank, Johannesburg
-    const map = L.map('interactive-map').setView([-26.1620, 28.0413], 15);
-    
-    // Add tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    
-    // Add custom bakery marker
-    const bakeryIcon = L.divIcon({
-        html: '<i class="ri-store-2-fill"></i>',
-        iconSize: [30, 30],
-        className: 'bakery-marker'
-    });
-    
-    // Add marker for bakery location
-    const bakeryMarker = L.marker([-26.1620, 28.0413], {icon: bakeryIcon}).addTo(map)
-        .bindPopup(`
-            <div class="map-popup">
-                <h3>Cinnamon's Buns Bakery</h3>
-                <p>123 Bakery Street<br>Rosebank, Johannesburg 2196</p>
-                <p><strong>Hours:</strong> Mon-Thu 8AM-5PM<br>Fri 8AM-6PM<br>Weekends 8AM-2PM</p>
-                <button class="btn-get-directions" onclick="getDirections()">Get Directions</button>
-            </div>
-        `)
-        .openPopup();
-    
-    // Add click event for directions
-    window.getDirections = function() {
-        window.open('https://www.google.com/maps/dir//-26.1620,28.0413', '_blank');
-    };
-}
-
-function initContactTabs() {
-    const contactTabs = document.querySelectorAll('.contact-tab');
-    const tabPanes = document.querySelectorAll('.contact-tab-pane');
-    
-    contactTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            
-            // Remove active class from all tabs and panes
-            contactTabs.forEach(t => t.classList.remove('active'));
-            tabPanes.forEach(pane => pane.classList.remove('active'));
-            
-            // Add active class to current tab and pane
-            this.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
-    
-    // Auto-fill subject for catering button
-    document.querySelector('.btn-catering')?.addEventListener('click', function() {
-        document.getElementById('enquiry-type').value = 'catering';
-        document.getElementById('subject').value = 'Catering Enquiry';
-        document.querySelector('.contact-tab[data-tab="catering"]').click();
-        
-        // Scroll to form
-        document.querySelector('.enhanced-form-section').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-}
-
-function initFAQAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-        });
-    });
-}
-
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateContactForm()) {
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'flex';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Hide loading state
-                btnText.style.display = 'block';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-                
-                // Show success modal
-                showSuccessModal();
-                
-                // Reset form
-                form.reset();
-            }, 2000);
-        }
-    });
-    
-    // Real-time validation
-    const inputs = form.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateField(this);
-        });
-        
-        input.addEventListener('input', function() {
-            clearError(this);
-        });
-    });
-}
-
-function validateContactForm() {
-    const form = document.getElementById('contact-form');
-    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-    let isValid = true;
-    
-    inputs.forEach(input => {
-        if (!validateField(input)) {
-            isValid = false;
-        }
-    });
-    
-    return isValid;
-}
-
-function validateField(field) {
-    const value = field.value.trim();
-    const errorElement = document.getElementById(field.id + '-error') || field.parentNode.querySelector('.error-message');
-    
-    // Clear previous error
-    clearError(field);
-    
-    // Check required fields
-    if (field.hasAttribute('required') && value === '') {
-        showError(field, 'This field is required');
-        return false;
-    }
-    
-    // Email validation
-    if (field.type === 'email' && value !== '') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            showError(field, 'Please enter a valid email address');
-            return false;
-        }
-    }
-    
-    // Phone validation
-    if (field.id === 'cell' && value !== '') {
-        const phoneRegex = /^[0-9+\-\s()]{10,}$/;
-        if (!phoneRegex.test(value)) {
-            showError(field, 'Please enter a valid phone number');
-            return false;
-        }
-    }
-    
-    return true;
-}
-
-function showError(field, message) {
-    const errorElement = document.getElementById(field.id + '-error') || field.parentNode.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.textContent = message;
-    }
-    field.style.borderColor = '#ff4757';
-}
-
-function clearError(field) {
-    const errorElement = document.getElementById(field.id + '-error') || field.parentNode.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.textContent = '';
-    }
-    field.style.borderColor = '';
-}
-
-function initModal() {
-    const modal = document.getElementById('success-modal');
-    const closeButtons = modal.querySelectorAll('.modal-close, .modal-close-btn');
-    
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-    });
-    
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
-}
-
-function showSuccessModal() {
-    const modal = document.getElementById('success-modal');
-    modal.classList.add('active');
-}
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-</script>
 </body>
 </html>

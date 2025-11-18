@@ -1,4 +1,4 @@
-// === CART FUNCTIONALITY === //
+// CART FUNCTIONALITY //
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartIcon = document.getElementById('cart-icon');
 const cartElement = document.querySelector('.cart');
@@ -215,7 +215,7 @@ if (btnBuy) {
     });
 }
 
-// === TOAST MESSAGES === //
+// TOAST MESSAGES //
 function showToastMessage(message, type = 'success') {
     // Remove existing toast
     const existingToast = document.querySelector('.toast-message');
@@ -243,7 +243,7 @@ function showToastMessage(message, type = 'success') {
     }, 3000);
 }
 
-// === FORM VALIDATION === //
+// FORM VALIDATION //
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
     
@@ -367,7 +367,7 @@ function clearError(field) {
     field.style.borderColor = '';
 }
 
-// === MODAL FUNCTIONALITY === //
+// MODAL FUNCTIONALITY //
 function initModal() {
     const modals = document.querySelectorAll('.modal');
     
@@ -409,7 +409,7 @@ function showSuccessModal() {
     }
 }
 
-// === ACCORDION FUNCTIONALITY === //
+// ACCORDION FUNCTIONALITY //
 function initAccordion() {
     const accordions = document.querySelectorAll('.accordion, .faq-accordion, .catering-accordion');
     
@@ -436,7 +436,7 @@ function initAccordion() {
     });
 }
 
-// === SEARCH AND FILTER FUNCTIONALITY === //
+// SEARCH AND FILTER FUNCTIONALITY //
 function initSearchFilter() {
     const searchInput = document.getElementById('product-search');
     const productContainer = document.getElementById('product-container');
@@ -473,225 +473,256 @@ function initSearchFilter() {
     searchInput.addEventListener('input', filterProducts);
 }
 
-// === GALLERY FUNCTIONALITY === //
+// GALLERY FUNCTIONALITY //
 function initGallery() {
-    initLightbox();
     initGalleryFilters();
-}
-
-function initLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    if (!lightbox) return;
-    
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxDescription = document.getElementById('lightbox-description');
-    const lightboxCategory = document.getElementById('lightbox-category');
-    const closeBtn = lightbox.querySelector('.lightbox-close');
-    const prevBtn = lightbox.querySelector('.lightbox-prev');
-    const nextBtn = lightbox.querySelector('.lightbox-next');
-
-    let currentIndex = 0;
-    let galleryItems = [];
-
-    // Initialize gallery items array
-    document.querySelectorAll('.view-btn').forEach((btn, index) => {
-        galleryItems.push({
-            image: btn.getAttribute('data-image'),
-            title: btn.getAttribute('data-title'),
-            description: btn.getAttribute('data-description'),
-            category: btn.closest('.gallery-item').getAttribute('data-category')
-        });
-    });
-
-    // Open lightbox
-    document.querySelectorAll('.view-btn').forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-            currentIndex = index;
-            openLightbox(currentIndex);
-        });
-    });
-
-    function openLightbox(index) {
-        const item = galleryItems[index];
-        lightboxImage.src = item.image;
-        lightboxImage.alt = item.title;
-        lightboxTitle.textContent = item.title;
-        lightboxDescription.textContent = item.description;
-        lightboxCategory.textContent = formatCategory(item.category);
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    function navigateLightbox(direction) {
-        currentIndex += direction;
-        if (currentIndex < 0) currentIndex = galleryItems.length - 1;
-        if (currentIndex >= galleryItems.length) currentIndex = 0;
-        openLightbox(currentIndex);
-    }
-
-    // Event listeners
-    closeBtn.addEventListener('click', closeLightbox);
-    if (prevBtn) prevBtn.addEventListener('click', () => navigateLightbox(-1));
-    if (nextBtn) nextBtn.addEventListener('click', () => navigateLightbox(1));
-
-    // Close on backdrop click
-    lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (!lightbox.classList.contains('active')) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                closeLightbox();
-                break;
-            case 'ArrowLeft':
-                navigateLightbox(-1);
-                break;
-            case 'ArrowRight':
-                navigateLightbox(1);
-                break;
-        }
-    });
 }
 
 function initGalleryFilters() {
     const categoryFilter = document.getElementById('category-filter');
-    const galleryItems = document.querySelectorAll('.gallery-item');
     const searchInput = document.getElementById('gallery-search');
     const sortSelect = document.getElementById('sort-gallery');
-    const loadMoreBtn = document.getElementById('load-more');
+    const galleryContainer = document.getElementById('gallery-container');
+    const noResults = document.getElementById('no-gallery-results');
+
+    console.log('Initializing gallery filters...');
+
+    // Get all gallery items and sections
+    const galleryItems = document.querySelectorAll('.gallery');
+    const sections = document.querySelectorAll('.in-store');
+
+    console.log('Gallery items found:', galleryItems.length);
+    console.log('Sections found:', sections.length);
 
     // Category filter functionality
     if (categoryFilter) {
         categoryFilter.addEventListener('change', function() {
             const filterValue = this.value;
-            
-            galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeInUp 0.6s ease forwards';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            checkGalleryResults();
+            console.log('Category filter changed to:', filterValue);
+            filterGalleryItems();
         });
     }
 
     // Search functionality
     if (searchInput) {
         searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            
-            galleryItems.forEach(item => {
-                const itemName = item.getAttribute('data-name').toLowerCase();
-                const itemCategory = item.getAttribute('data-category');
-                const isVisible = itemName.includes(searchTerm);
-                
-                // Also check if current filter allows display
-                const activeFilter = categoryFilter ? categoryFilter.value : 'all';
-                const filterMatch = activeFilter === 'all' || itemCategory === activeFilter;
-                
-                item.style.display = (isVisible && filterMatch) ? 'block' : 'none';
-                
-                // Add animation for visible items
-                if (isVisible && filterMatch) {
-                    item.style.animation = 'fadeInUp 0.6s ease forwards';
-                }
-            });
-            
-            checkGalleryResults();
+            console.log('Search input:', this.value);
+            filterGalleryItems();
         });
     }
 
     // Sort functionality
     if (sortSelect) {
         sortSelect.addEventListener('change', function() {
+            console.log('Sort changed to:', this.value);
             sortGalleryItems(this.value);
         });
     }
 
-    // Load more functionality
-    if (loadMoreBtn) {
-        let itemsToShow = 12;
+    // Main filter function that combines category and search
+    function filterGalleryItems() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const categoryValue = categoryFilter ? categoryFilter.value : 'all';
         
-        // Initially hide items beyond the first batch
-        galleryItems.forEach((item, index) => {
-            if (index >= itemsToShow) {
-                item.style.display = 'none';
-            }
-        });
+        console.log('Filtering - Search:', searchTerm, 'Category:', categoryValue);
 
-        loadMoreBtn.addEventListener('click', function() {
-            itemsToShow += 12;
-            
-            galleryItems.forEach((item, index) => {
-                if (index < itemsToShow) {
+        let totalVisibleItems = 0;
+        let totalVisibleSections = 0;
+
+        // Filter sections and their items
+        sections.forEach(section => {
+            const sectionCategory = section.getAttribute('data-category');
+            const sectionItems = section.querySelectorAll('.gallery');
+            let sectionVisibleItems = 0;
+
+            // Check if section should be visible based on category
+            const sectionMatchesCategory = categoryValue === 'all' || sectionCategory === categoryValue;
+
+            // Filter items within section
+            sectionItems.forEach(item => {
+                const itemName = item.getAttribute('data-name') ? item.getAttribute('data-name').toLowerCase() : '';
+                const itemDescription = item.querySelector('.description') ? item.querySelector('.description').textContent.toLowerCase() : '';
+
+                // Check if item matches search term
+                const matchesSearch = searchTerm === '' || 
+                                    itemName.includes(searchTerm) || 
+                                    itemDescription.includes(searchTerm);
+                
+                // Check if item matches category filter
+                const matchesCategory = categoryValue === 'all' || sectionCategory === categoryValue;
+                
+                const shouldShow = matchesSearch && matchesCategory;
+                
+                if (shouldShow) {
                     item.style.display = 'block';
                     item.style.animation = 'fadeInUp 0.6s ease forwards';
+                    sectionVisibleItems++;
+                    totalVisibleItems++;
+                } else {
+                    item.style.display = 'none';
                 }
             });
 
-            // Hide button if all items are shown
-            if (itemsToShow >= galleryItems.length) {
-                loadMoreBtn.style.display = 'none';
+            // Show/hide section based on whether it has visible items
+            if (sectionVisibleItems > 0 && sectionMatchesCategory) {
+                section.style.display = 'block';
+                totalVisibleSections++;
+                
+                // Show the section heading
+                const sectionHeading = section.querySelector('h2');
+                if (sectionHeading) {
+                    sectionHeading.style.display = 'block';
+                }
+            } else {
+                section.style.display = 'none';
+                
+                // Hide the section heading
+                const sectionHeading = section.querySelector('h2');
+                if (sectionHeading) {
+                    sectionHeading.style.display = 'none';
+                }
             }
 
-            // Smooth scroll to new items
-            const lastVisibleItem = galleryItems[Math.min(itemsToShow - 1, galleryItems.length - 1)];
-            lastVisibleItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            console.log('Section:', sectionCategory, 'Visible items:', sectionVisibleItems);
         });
+        
+        console.log('Total visible items:', totalVisibleItems, 'Total visible sections:', totalVisibleSections);
+        checkGalleryResults(totalVisibleItems);
     }
 
-    function checkGalleryResults() {
-        const visibleItems = document.querySelectorAll('.gallery-item[style="display: block"]');
-        const noResults = document.getElementById('no-gallery-results');
+    function checkGalleryResults(visibleCount) {
+        console.log('Checking results - Visible items:', visibleCount);
         
         if (noResults) {
-            noResults.style.display = visibleItems.length === 0 ? 'block' : 'none';
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            console.log('No results message:', noResults.style.display);
         }
     }
 
     function sortGalleryItems(sortBy) {
-        const galleryContainer = document.getElementById('gallery-container');
-        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        console.log('Sorting gallery items by:', sortBy);
 
-        galleryItems.sort((a, b) => {
-            const aName = a.getAttribute('data-name');
-            const bName = b.getAttribute('data-name');
-            const aCategory = a.getAttribute('data-category');
-            const bCategory = b.getAttribute('data-category');
+        // For this structure, we'll sort within each section
+        sections.forEach(section => {
+            const galleryWrapper = section.querySelector('.gallery-wrapper');
+            const galleryItems = Array.from(section.querySelectorAll('.gallery'));
+            
+            if (!galleryWrapper) return;
 
-            switch(sortBy) {
-                case 'name':
-                    return aName.localeCompare(bName);
-                case 'name-desc':
-                    return bName.localeCompare(aName);
-                case 'category':
-                    return aCategory.localeCompare(bCategory);
-                default:
-                    return 0;
-            }
+            galleryItems.sort((a, b) => {
+                const aName = a.getAttribute('data-name') || '';
+                const bName = b.getAttribute('data-name') || '';
+                const aCategory = a.getAttribute('data-category') || '';
+                const bCategory = b.getAttribute('data-category') || '';
+
+                switch(sortBy) {
+                    case 'name':
+                        return aName.localeCompare(bName);
+                    case 'name-desc':
+                        return bName.localeCompare(aName);
+                    case 'category':
+                        return aCategory.localeCompare(bCategory);
+                    default:
+                        return 0;
+                }
+            });
+
+            // Clear wrapper and append sorted items
+            galleryWrapper.innerHTML = '';
+            galleryItems.forEach(item => {
+                galleryWrapper.appendChild(item);
+            });
+
+            // Re-apply animations
+            galleryItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.style.animation = 'fadeInUp 0.6s ease forwards';
+            });
         });
 
-        // Clear container and append sorted items
-        galleryContainer.innerHTML = '';
-        galleryItems.forEach(item => {
-            galleryContainer.appendChild(item);
-        });
+        // Re-filter after sorting to maintain current filter state
+        filterGalleryItems();
     }
+
+    // Initialize filter states based on URL parameters
+    function initializeFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const sort = urlParams.get('sort');
+        const search = urlParams.get('search');
+
+        console.log('Initializing from URL:', { category, sort, search });
+
+        if (category && categoryFilter) {
+            categoryFilter.value = category;
+        }
+
+        if (sort && sortSelect) {
+            sortSelect.value = sort;
+        }
+
+        if (search && searchInput) {
+            searchInput.value = search;
+        }
+
+        // Apply filters after setting values
+        filterGalleryItems();
+        if (sort && sortSelect) {
+            sortGalleryItems(sort);
+        }
+    }
+
+    // Update URL when filters change
+    function updateURL() {
+        const urlParams = new URLSearchParams();
+        
+        if (categoryFilter && categoryFilter.value !== 'all') {
+            urlParams.set('category', categoryFilter.value);
+        }
+        
+        if (sortSelect && sortSelect.value !== 'default') {
+            urlParams.set('sort', sortSelect.value);
+        }
+        
+        if (searchInput && searchInput.value) {
+            urlParams.set('search', searchInput.value);
+        }
+
+        const newURL = window.location.pathname + (urlParams.toString() ? `?${urlParams.toString()}` : '');
+        window.history.replaceState({}, '', newURL);
+    }
+
+    // Add URL update to filter events
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', updateURL);
+    }
+    
+    if (sortSelect) {
+        sortSelect.addEventListener('change', updateURL);
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(updateURL, 500));
+    }
+
+    // Debounce function for search input
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Initialize from URL on page load
+    initializeFromURL();
+    
+    // Initial filter check
+    filterGalleryItems();
 }
 
 function formatCategory(category) {
@@ -700,7 +731,7 @@ function formatCategory(category) {
     ).join(' ');
 }
 
-// === SHOP PAGE FUNCTIONALITY === //
+// SHOP PAGE FUNCTIONALITY //
 function initShopPage() {
     const searchInput = document.getElementById('shop-search');
     const categoryFilter = document.getElementById('category-filter');
@@ -959,7 +990,7 @@ function initShopPage() {
     }
 }
 
-// === ANIMATIONS AND TRANSITIONS === //
+// ANIMATIONS AND TRANSITIONS //
 function initAnimations() {
     // Intersection Observer for scroll animations
     const observerOptions = {
@@ -976,7 +1007,7 @@ function initAnimations() {
     }, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.product-box, .story-card, .form-container, .gallery-item, .team-member, .timeline-item').forEach(el => {
+    document.querySelectorAll('.product-box, .story-card, .form-container, .gallery, .team-member, .timeline-item').forEach(el => {
         observer.observe(el);
     });
     
@@ -995,7 +1026,7 @@ function initAnimations() {
     });
 }
 
-// === TIMELINE FUNCTIONALITY === //
+// TIMELINE FUNCTIONALITY //
 function initTimeline() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     
@@ -1054,44 +1085,36 @@ function initContactTabs() {
     }
 }
 
-// === MAP FUNCTIONALITY === //
+// MAP FUNCTIONALITY //
 function initMap() {
     const mapContainer = document.getElementById('bakery-map') || document.getElementById('interactive-map');
     if (!mapContainer) return;
     
     try {
-        // Initialize the map (using Johannesburg coordinates as default)
-        const map = L.map(mapContainer).setView([-26.2041, 28.0473], 13);
+        // Initialize the map with Rosebank College Braamfontein coordinates
+        const map = L.map(mapContainer).setView([-26.1925, 28.0306], 16);
         
-        // Add tile layer
+        // Tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         
-        // Add custom bakery marker
+        // Bakery marker
         const bakeryIcon = L.divIcon({
-            html: '<i class="ri-store-2-fill"></i>',
-            iconSize: [30, 30],
+            html: '<i class="ri-map-pin-time-fill"></i>',
+            iconSize: [40, 40],
             className: 'bakery-marker'
         });
         
-        // Add marker for bakery location
-        const bakeryMarker = L.marker([-26.2041, 28.0473], {icon: bakeryIcon}).addTo(map)
-            .bindPopup(`
-                <div class="map-popup">
-                    <h3>Cinnamon's Buns Bakery</h3>
-                    <p>123 Bakery Street<br>Rosebank, Johannesburg 2196</p>
-                    <p><strong>Hours:</strong> Mon-Thu 8AM-5PM<br>Fri 8AM-6PM<br>Weekends 8AM-2PM</p>
-                    <button class="btn-get-directions" onclick="window.open('https://www.google.com/maps/dir//-26.2041,28.0473', '_blank')">Get Directions</button>
-                </div>
-            `)
-            .openPopup();
+        // Pin marker
+        L.marker([-26.1925, 28.0306], {icon: bakeryIcon}).addTo(map);
+        
     } catch (error) {
         console.warn('Map initialization failed:', error);
     }
 }
 
-// === LOADING STATES === //
+// LOADING STATES //
 function showLoading() {
     const loading = document.getElementById('loading');
     if (loading) {
@@ -1106,7 +1129,7 @@ function hideLoading() {
     }
 }
 
-// === LAZY LOADING === //
+// LAZY LOADING //
 function initLazyLoading() {
     if ('IntersectionObserver' in window) {
         const lazyImageObserver = new IntersectionObserver((entries, observer) => {
@@ -1126,7 +1149,7 @@ function initLazyLoading() {
     }
 }
 
-// === INITIALIZE EVERYTHING ON DOM LOAD === //
+// INITIALIZE EVERYTHING ON DOM LOAD //
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize cart
     updateCartCount();
@@ -1146,7 +1169,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initMap();
     }
     
-    if (document.querySelector('.gallery-grid')) {
+    if (document.querySelector('.gallery-controls')) {
+        console.log('Gallery page detected, initializing gallery...');
         initGallery();
     }
     
@@ -1165,7 +1189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('All JavaScript functionalities initialized successfully!');
 });
 
-// === ERROR HANDLING === //
+// ERROR HANDLING //
 window.addEventListener('error', function(e) {
     console.error('JavaScript Error:', e.error);
 });
